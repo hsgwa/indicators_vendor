@@ -11,6 +11,27 @@ find_package(ament_cmake REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+include(ExternalProject)
+
+externalproject_add(indicators-2.2
+    URL https://github.com/p-ranav/indicators/archive/refs/tags/v2.2.tar.gz
+    URL_HASH SHA256=b768f1b7ca64a413503f72d5460cc617c1458c17fb7a8c0ee503d753e1f20d03
+    TIMEOUT 600
+    CMAKE_ARGS
+      -DCMAKE_INSTALL_PREFIX=${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_install
+      -Wno-dev
+      -Wall
+      -Wextra
+      -Wpedantic
+)
+
+install(
+    DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}_install/
+    DESTINATION ${CMAKE_INSTALL_PREFIX}
+)
+
+ament_export_include_directories(include)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
