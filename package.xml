@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>lib_indicators_vendor</name>
+  <name>indicators_vendor</name>
   <version>0.0.1</version>
   <description>Wrapper around indicators, it provides a fixed CMake module and an ExternalProject build of it.</description>
   <maintainer email="hasegawa.isp@gmail.com">hsgwa</maintainer>

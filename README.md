@@ -1,1 +1,1 @@
-# lib_indicators_vendor
+# indicators_vendor
